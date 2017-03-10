@@ -1,0 +1,337 @@
+%--------------------------------------
+%  LaTeX RESUME TEMPLATE
+%    <github.com/myklhenn/ResuTeX>
+%  AUTHOR: 
+%    Michael Henning
+%    <mykl951@gmail.com>
+%  LAST UPDATED:
+%    2017-03-09
+%--------------------------------------
+\documentclass{article}
+
+%----- packages -----------------------
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{multicol}
+\usepackage{tabto}
+
+%----- page setup ---------------------
+\pagestyle{empty}
+\geometry{
+  letterpaper,
+  lmargin=0.45in,
+  rmargin=0.45in,
+  tmargin=0.4in,
+  bmargin=0.4in
+}
+\setitemize[0]{
+  leftmargin=0em
+}
+
+%----- custom layout macros -----------
+\newcommand{\textul}[1]{\underline{\smash{#1}}}
+\newcommand{\toolbullet}[0]{\texttt{>> }}
+\newcommand{\MEANStackToolList}[0]{\texttt{MEAN Stack} 
+  (\ProjectTool{MongoDB}, \ProjectTool{ExpressJS}, 
+  \ProjectTool{AngularJS}, \ProjectTool{Node.js})}
+
+%--- CONTACT INFO
+\newcommand{\Name}[1]{#1} % (no extra formatting on macros like these)
+\newcommand{\AddressLineOne}[1]{#1}
+\newcommand{\AddressLineTwo}[1]{#1}
+\newcommand{\Phone}[1]{#1}
+\newcommand{\Email}[1]{\href{mailto:#1}{<#1>}}
+\newcommand{\Website}[1]{\texttt{\href{#1}{\textul{#1}}}}
+\newcommand{\ContactInfo}[6]{
+  \part*{#1}
+  \begin{tabular}{ m{12em} m{24em} }
+    #2 & \texttt{#4 #5} \\ #3 & #6
+  \end{tabular}
+  %1: \Name
+  %2: \AddressLineOne
+  %3: \AddressLineTwo
+  %4: \Phone
+  %5: \Email
+  %6: \Website
+}
+
+%--- EDUCATION
+\newcommand{\College}[1]{\textsc{#1}}
+\newcommand{\Major}[1]{#1}
+\newcommand{\StartYear}[1]{#1}
+\newcommand{\GradYear}[1]{#1}
+\newcommand{\Education}[4]{
+  \section*{Education}
+  \begin{itemize}
+    \item[] {\Large #1 --- #2} \item[] {\large #3 to #4}
+  \end{itemize}
+  %1: \College
+  %2: \Major
+  %3: \StartYear
+  %4: \endyear
+}
+\newcommand{\CourseName}[1]{\textul{#1}}
+\newcommand{\CourseCode}[1]{(#1)}
+\newcommand{\CourseItem}[2]{
+  \item[] #1 #2
+  %1: \CourseName
+  %2: \CourseItem
+}
+\newcommand{\CourseList}[8]{
+  \begin{multicols}{2}
+    \begin{itemize}[itemsep=0em]
+      #1 #2 #3 #4 \columnbreak #5 #6 #7 #8
+    \end{itemize}
+  \end{multicols}
+  %1 to %8: \CourseItem
+}
+
+%--- PROJECTS
+\newcommand{\ProjectTitle}[1]{{\large\scshape #1}}
+\newcommand{\ProjectLocation}[1]{--- \textit{#1}}
+\newcommand{\ProjectDate}[1]{--- \textsl{#1}}
+\newcommand{\ProjectDescription}[1]{#1}
+\newcommand{\ProjectLink}[1]{\href{#1}{\textul{\ttfamily #1}}}
+\newcommand{\ProjectTool}[1]{\textul{\ttfamily #1}}
+\newcommand{\ProjectItem}[6]{
+  \item[] #1 #2 #3 \par #4 #5 \\ \tabto{1em} \toolbullet #6
+  %1: \ProjectTitle
+  %2: \ProjectLocation
+  %3: \ProjectDate
+  %4: \ProjectDescription
+  %5: \ProjectLink || \ProjectLinklist@x
+  %6: \ProjectTool || \ProjectToollist@x
+}
+\newcommand{\Projects}[7]{
+  \section*{Projects}
+  \begin{itemize}[itemsep=1em]
+    #1 #2 #3 #4 #5 #6 #7
+  \end{itemize}
+  %1 to %7: \ProjectItem
+}
+
+%--- (fixed list length wrappers)
+\newcommand{\ProjectLinkListONE}[1]{(#1)}
+\newcommand{\ProjectLinkListTWO}[2]{(#1, #2)}
+\newcommand{\ProjectToolListTWO}[2]{#1, #2}
+\newcommand{\ProjectToolListTHREE}[3]{#1, #2, #3}
+\newcommand{\ProjectToolListFOUR}[4]{#1, #2, #3, #4}
+\newcommand{\ProjectToolListFIVE}[5]{#1, #2, #3, #4, #5}
+\newcommand{\ProjectToolListSIX}[6]{#1, #2, #3, #4, #5, #6}
+\newcommand{\ProjectToolListSEVEN}[7]{#1, #2, #3, #4, #5, #6, #7}
+
+%--- REFERENCES
+\newcommand{\ReferenceName}[1]{\textsc{#1}}
+\newcommand{\ReferenceEmail}[1]{\href{mailto:#1}{\ttfamily <#1>}}
+\newcommand{\ReferenceItem}[2]{
+  \item[] #1 \\ #2
+  %1: \ReferenceName
+  %2: \ReferenceEmail
+}
+\newcommand{\References}[3]{
+  \section*{References}
+  \begin{multicols}{3}
+    \begin{itemize}
+      #1 #2 #3
+    \end{itemize}
+  \end{multicols}
+  %1 to %3: \ReferenceItem
+}
+
+%----- document content ---------------
+\begin{document}
+
+\ContactInfo
+  {\Name{Michael Henning}}
+  {\AddressLineOne{2524 Douglas Ave \#403}}
+  {\AddressLineTwo{Bellingham, WA 98225}}
+  {\Email{henninm3@wwu.edu}}
+  {\Phone{(206)999-4513}}
+  {\Website{https://linkedin.com/in/myklhenn}}
+
+\Education
+  {\College{Western Washington University}}
+  {\Major{Computer Science, BS}}
+  {\StartYear{Fall 2013}}
+  {\GradYear{Winter 2018 (Expected)}}
+
+\CourseList
+  {\CourseItem
+    {\CourseName{Dynamic Web Pages}}
+    {\CourseCode{CSCI 202}}
+  }
+  {\CourseItem
+    {\CourseName{Data Structures}}
+    {\CourseCode{CSCI 241}}
+  }
+  {\CourseItem
+    {\CourseName{Analysis of Algorithms}}
+    {\CourseCode{CSCI 305}}
+  }
+  {\CourseItem
+    {\CourseName{Website Development and Management}}
+    {\CourseCode{MIS 314}}
+  }
+  {\CourseItem
+    {\CourseName{Concurrent Programming}}
+    {\CourseCode{CSCI 322}}
+  }
+  {\CourseItem
+    {\CourseName{Database Systems}}
+    {\CourseCode{CSCI 330}}
+  }
+  {\CourseItem
+    {\CourseName{UNIX Software Development}}
+    {\CourseCode{CSCI 352}}
+  }
+  {\CourseItem
+    {\CourseName{Human-Centered System Design}}
+    {\CourseCode{CSCI 497}}
+  }
+
+\Projects
+  {\ProjectItem
+    {\ProjectTitle{Mobile Application ``Journey''}}
+    {\ProjectLocation{WWU CSCI 497 Final Project}}
+    {\ProjectDate{January 2017 to Present}}
+    {\ProjectDescription
+      {Building an Android application (using Android Studio IDE) to create and 
+      travel on virtual ``journeys'' with friends using the device's fitness 
+      tracking sensors and data}
+    }
+    {\ProjectLinkListONE
+      {\ProjectLink{https://github.com/myklhenn/JourneyApp}}
+    }
+    {\ProjectToolListSIX
+      {\ProjectTool{Java}}
+      {\ProjectTool{Android}}
+      {\ProjectTool{GitHub}}
+      {\ProjectTool{Heroku}}
+      {\ProjectTool{Ruby on Rails}}
+      {\ProjectTool{Google Maps API}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{\LaTeX\ Resume Redesign}}
+    {} % \ProjectLocation
+    {\ProjectDate{February 2017 to Present}}
+    {\ProjectDescription
+      {Reworked and typeset current resume in \LaTeX\ with custom macros to 
+      create a heirarchical, object-oriented-like format for easy readability
+      and updating}
+    }
+    {\ProjectLinkListONE
+      {\ProjectLink{http://github.com/myklhenn/ResuTeX}}
+    }
+    {\ProjectTool{LaTeX}}
+  }
+  {\ProjectItem
+    {\ProjectTitle{Hackathon ``DubHacks Fall 2016''}}
+    {\ProjectLocation{University of Washington}}
+    {\ProjectDate{Oct 15-16, 2016}}
+    {\ProjectDescription
+      {Built a web app as a tool for genetics researchers to perform ``genomic 
+      sequence analysis'' on DNA strands from GenBank database}
+    }
+    {\ProjectLinkListONE
+      {\ProjectLink{https://github.com/garyh6/dubhacks}}
+    }
+    {\ProjectToolListFOUR
+      {\ProjectTool{HTML}}
+      {\ProjectTool{CSS}}
+      {\MEANStackToolList}
+      {\ProjectTool{GitHub}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{MEAN Stack Project}}
+    {} % \ProjectLocation
+    {\ProjectDate{June 2015 to July 2016}}
+    {\ProjectDescription
+      {Worked with Skyler Kidd to rebuild a client's Website using MEAN Stack 
+      and Bootstrap frameworks}
+    }
+    {} % \ProjectLink
+    {\ProjectToolListFOUR
+      {\ProjectTool{HTML}}
+      {\ProjectTool{CSS}}
+      {\MEANStackToolList}
+      {\ProjectTool{GitHub}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{Hackathon ``DubHacks Fall 2015''}}
+    {\ProjectLocation{University of Washington}}
+    {\ProjectDate{Oct 17-18, 2015}}
+    {\ProjectDescription
+      {Built a web app to generate SoundCloud playlists based on recommended 
+      tracks}
+    }
+    {\ProjectLinkListONE
+      {\ProjectLink{https://github.com/aaron235/SoundVane}}
+    }
+    {\ProjectToolListSEVEN
+      {\ProjectTool{HTML}}
+      {\ProjectTool{SASS}}
+      {\ProjectTool{Handlebars.js}}
+      {\ProjectTool{Express.js}}
+      {\ProjectTool{Node.js}}
+      {\ProjectTool{GitHub}}
+      {\ProjectTool{Heroku}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{Hackathon ``WWU Open Source Day''}}
+    {\ProjectLocation{Western Washington University}}
+    {\ProjectDate{May 9, 2015}}
+    {\ProjectDescription
+      {Worked with ``Language of Languages'' project to redesign their Website 
+      using Jekyll and GitHub Pages}
+    }
+    {\\ \ProjectLinkListTWO % newline needed here to fix an overflow issue
+      {\ProjectLink{http://www.researchonknowing.com}}
+      {\ProjectLink{https://github.com/andronetta/andronetta.github.io}}
+    }
+    {\ProjectToolListFOUR
+      {\ProjectTool{Jekyll}}
+      {\ProjectTool{GitHub}}
+      {\ProjectTool{HTML}}
+      {\ProjectTool{CSS}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{Startup Weekend ``Redesign Seattle''}}
+    {\ProjectLocation{WeWork South Lake Union, Seattle, WA}}
+    {\ProjectDate{Mar 21-23, 2014}}
+    {\ProjectDescription
+      {Built ``Enheighten,'' a Website promoting products for tall people, 
+      using WebStorm IDE and the frameworks listed below}
+    }
+    {} % \ProjectLink
+    {\ProjectToolListFIVE
+      {\ProjectTool{AngularJS}}
+      {\ProjectTool{Bootstrap}}
+      {\ProjectTool{Grunt}}
+      {\ProjectTool{Bower}}
+      {\ProjectTool{GitHub}}
+    }
+  }
+
+\References
+  {\ReferenceItem
+    {\ReferenceName{Skyler Kidd}}
+    {\ReferenceEmail{f.s.kidd@gmail.com}}
+  }
+  {\ReferenceItem
+    {\ReferenceName{Sue Piatt}}
+    {\ReferenceEmail{s.piatt@comcast.net}}
+  }
+  {\ReferenceItem
+    {\ReferenceName{Lesley Moffat}}
+    {\ReferenceEmail{lmoffat@everettsd.org}}
+  }
+
+\end{document}
