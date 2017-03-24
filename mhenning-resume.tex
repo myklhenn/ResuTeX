@@ -5,7 +5,7 @@
 %    Michael Henning
 %    <mykl951@gmail.com>
 %  LAST UPDATED:
-%    2017-03-09
+%    2017-03-24
 %--------------------------------------
 \documentclass{article}
 
@@ -25,7 +25,7 @@
   lmargin=0.45in,
   rmargin=0.45in,
   tmargin=0.4in,
-  bmargin=0.4in
+  bmargin=0.2in
 }
 \setitemize[0]{
   leftmargin=0em
@@ -34,6 +34,7 @@
 %----- custom layout macros -----------
 \newcommand{\textul}[1]{\underline{\smash{#1}}}
 \newcommand{\toolbullet}[0]{\texttt{>> }}
+\newcommand{\EventTitle}[1]{\textul{#1}}
 \newcommand{\MEANStackToolList}[0]{\texttt{MEAN Stack} 
   (\ProjectTool{MongoDB}, \ProjectTool{ExpressJS}, 
   \ProjectTool{AngularJS}, \ProjectTool{Node.js})}
@@ -91,19 +92,21 @@
 
 %--- PROJECTS
 \newcommand{\ProjectTitle}[1]{{\large\scshape #1}}
-\newcommand{\ProjectLocation}[1]{--- \textit{#1}}
-\newcommand{\ProjectDate}[1]{--- \textsl{#1}}
+\newcommand{\ProjectLocation}[1]{--- \textsl{#1}}
+\newcommand{\ProjectDate}[1]{\hfill\textsl{#1}}
+\newcommand{\ProjectPosition}[1]{\textit{#1} ---}
 \newcommand{\ProjectDescription}[1]{#1}
 \newcommand{\ProjectLink}[1]{\href{#1}{\textul{\ttfamily #1}}}
 \newcommand{\ProjectTool}[1]{\textul{\ttfamily #1}}
-\newcommand{\ProjectItem}[6]{
-  \item[] #1 #2 #3 \par #4 #5 \\ \tabto{1em} \toolbullet #6
+\newcommand{\ProjectItem}[7]{
+  \item[] #1 #2 #3 \par #4 #5 #6 \\ \tabto{1em} \toolbullet #7
   %1: \ProjectTitle
   %2: \ProjectLocation
   %3: \ProjectDate
-  %4: \ProjectDescription
-  %5: \ProjectLink || \ProjectLinklist@x
-  %6: \ProjectTool || \ProjectToollist@x
+  %4: \ProjectPosition
+  %5: \ProjectDescription
+  %6: \ProjectLink || \ProjectLinklistXXX
+  %7: \ProjectTool || \ProjectToollistXXX
 }
 \newcommand{\Projects}[7]{
   \section*{Projects}
@@ -116,6 +119,7 @@
 %--- (fixed list length wrappers)
 \newcommand{\ProjectLinkListONE}[1]{(#1)}
 \newcommand{\ProjectLinkListTWO}[2]{(#1, #2)}
+\newcommand{\ProjectToolListONE}[1]{#1}
 \newcommand{\ProjectToolListTWO}[2]{#1, #2}
 \newcommand{\ProjectToolListTHREE}[3]{#1, #2, #3}
 \newcommand{\ProjectToolListFOUR}[4]{#1, #2, #3, #4}
@@ -195,12 +199,13 @@
 \Projects
   {\ProjectItem
     {\ProjectTitle{Mobile Application ``Journey''}}
-    {\ProjectLocation{WWU CSCI 497 Final Project}}
+    {\ProjectLocation{CSCI 497 Project, Western Washington University}}
     {\ProjectDate{January 2017 to Present}}
+    {\ProjectPosition{Front-End Designer/Developer}}
     {\ProjectDescription
       {Building an Android application (using Android Studio IDE) to create and 
-      travel on virtual ``journeys'' with friends using the device's fitness 
-      tracking sensors and data}
+      travel on virtual ``journeys'' with friends using the device's sensors and 
+      tracked fitness data}
     }
     {\ProjectLinkListONE
       {\ProjectLink{https://github.com/myklhenn/JourneyApp}}
@@ -218,23 +223,28 @@
     {\ProjectTitle{\LaTeX\ Resume Redesign}}
     {} % \ProjectLocation
     {\ProjectDate{February 2017 to Present}}
+    {} % \ProjectPosition
     {\ProjectDescription
       {Reworked and typeset current resume in \LaTeX\ with custom macros to 
-      create a heirarchical, object-oriented-like format for easy readability
-      and updating}
+      create a heirarchical, object-oriented-like format for easy reading and 
+      updating}
     }
     {\ProjectLinkListONE
       {\ProjectLink{http://github.com/myklhenn/ResuTeX}}
     }
-    {\ProjectTool{LaTeX}}
+    {\ProjectToolListONE
+      {\ProjectTool{LaTeX}}
+    }
   }
   {\ProjectItem
-    {\ProjectTitle{Hackathon ``DubHacks Fall 2016''}}
-    {\ProjectLocation{University of Washington}}
-    {\ProjectDate{Oct 15-16, 2016}}
+    {\ProjectTitle{Web Application ``Genesis''}}
+    {\ProjectLocation{at \EventTitle{DubHacks Fall 2016}, University of 
+      Washington}}
+    {\ProjectDate{October 2016}}
+    {\ProjectPosition{Front-End Developer}}
     {\ProjectDescription
-      {Built a web app as a tool for genetics researchers to perform ``genomic 
-      sequence analysis'' on DNA strands from GenBank database}
+      {Built a tool for genetics researchers to perform ``genomic sequence 
+      analysis'' on DNA strands from \textit{GenBank}'s database}
     }
     {\ProjectLinkListONE
       {\ProjectLink{https://github.com/garyh6/dubhacks}}
@@ -247,14 +257,15 @@
     }
   }
   {\ProjectItem
-    {\ProjectTitle{MEAN Stack Project}}
+    {\ProjectTitle{Web Application ``MEAN Stack Project''}}
     {} % \ProjectLocation
     {\ProjectDate{June 2015 to July 2016}}
+    {\ProjectPosition{Front-End Developer}}
     {\ProjectDescription
-      {Worked with Skyler Kidd to rebuild a client's Website using MEAN Stack 
+      {Worked with Skyler Kidd to rebuild a client's website using MEAN Stack 
       and Bootstrap frameworks}
     }
-    {} % \ProjectLink
+    {} % \ProjectLinkListXXX
     {\ProjectToolListFOUR
       {\ProjectTool{HTML}}
       {\ProjectTool{CSS}}
@@ -263,12 +274,14 @@
     }
   }
   {\ProjectItem
-    {\ProjectTitle{Hackathon ``DubHacks Fall 2015''}}
-    {\ProjectLocation{University of Washington}}
-    {\ProjectDate{Oct 17-18, 2015}}
+    {\ProjectTitle{Web Application ``SoundVane''}}
+    {\ProjectLocation{at \EventTitle{DubHacks Fall 2015}, University of 
+      Washington}}
+    {\ProjectDate{October 2015}}
+    {\ProjectPosition{Front-End Developer}}
     {\ProjectDescription
-      {Built a web app to generate SoundCloud playlists based on recommended 
-      tracks}
+      {Built a tool to generate SoundCloud playlists of the recommended tracks 
+      for a given song or playlist}
     }
     {\ProjectLinkListONE
       {\ProjectLink{https://github.com/aaron235/SoundVane}}
@@ -284,14 +297,16 @@
     }
   }
   {\ProjectItem
-    {\ProjectTitle{Hackathon ``WWU Open Source Day''}}
-    {\ProjectLocation{Western Washington University}}
-    {\ProjectDate{May 9, 2015}}
+    {\ProjectTitle{Website ``Research On Knowing''}}
+    {\ProjectLocation{at \EventTitle{Open Source Day}, Western Washington 
+      University}}
+    {\ProjectDate{May 2015}}
+    {\ProjectPosition{Front-End Developer}}
     {\ProjectDescription
-      {Worked with ``Language of Languages'' project to redesign their Website 
-      using Jekyll and GitHub Pages}
+      {Worked with ``Language of Languages'' project to redesign their website 
+      using Jekyll/GitHub Pages}
     }
-    {\\ \ProjectLinkListTWO % newline needed here to fix an overflow issue
+    {\ProjectLinkListTWO
       {\ProjectLink{http://www.researchonknowing.com}}
       {\ProjectLink{https://github.com/andronetta/andronetta.github.io}}
     }
@@ -303,14 +318,16 @@
     }
   }
   {\ProjectItem
-    {\ProjectTitle{Startup Weekend ``Redesign Seattle''}}
-    {\ProjectLocation{WeWork South Lake Union, Seattle, WA}}
-    {\ProjectDate{Mar 21-23, 2014}}
+    {\ProjectTitle{Website ``Enheighten''}}
+    {\ProjectLocation{at \EventTitle{Startup Weekend ``Redesign Seattle,''} 
+      WeWork, Seattle, WA}}
+    {\ProjectDate{March 2014}}
+    {\ProjectPosition{Front-End Developer}}
     {\ProjectDescription
-      {Built ``Enheighten,'' a Website promoting products for tall people, 
-      using WebStorm IDE and the frameworks listed below}
+      {Built a website promoting products for tall people using WebStorm's IDE 
+      and the tools listed below}
     }
-    {} % \ProjectLink
+    {} % \ProjectLinkListXXX
     {\ProjectToolListFIVE
       {\ProjectTool{AngularJS}}
       {\ProjectTool{Bootstrap}}
