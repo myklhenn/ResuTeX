@@ -1,7 +1,7 @@
 # ResuTeX
 A LaTeX resume/CV template, currently used for my own resume.
 
-See the compiled document [here](https://github.com/myklhenn/ResuTeX/blob/master/mhenning-resume.pdf).
+***See the compiled document [here](https://github.com/myklhenn/ResuTeX/blob/master/mhenning-resume.pdf).***
 
 This document implements a JSON-like syntax for defining its components, based 
 on `\newcommand` macros defined at the top of the file. A sample of the resume's 
@@ -28,10 +28,10 @@ used to format the actual content, follows:
 
 \ContactInfo
   {\Name{Michael Henning}}
-  {\AddressLineOne{2524 Douglas Ave \#403}}
+  {\AddressLineOne{3100 Ferry Ave, Apt. D117}}
   {\AddressLineTwo{Bellingham, WA 98225}}
-  {\Email{henninm3@wwu.edu}}
-  {\Phone{(206)999-4513}}
+  {\Email{mykl951@gmail.com}}
+  {\Phone{206-999-4513}}
   {\Website{https://linkedin.com/in/myklhenn}}
 ```
 
