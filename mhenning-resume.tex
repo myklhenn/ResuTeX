@@ -5,7 +5,7 @@
 %    Michael Henning
 %    <mykl951@gmail.com>
 %  LAST UPDATED:
-%    2017-03-24
+%    2017-09-13
 %--------------------------------------
 \documentclass{article}
 
@@ -24,8 +24,8 @@
   letterpaper,
   lmargin=0.45in,
   rmargin=0.45in,
-  tmargin=0.4in,
-  bmargin=0.2in
+  tmargin=0.30in,
+  bmargin=0.15in
 }
 \setitemize[0]{
   leftmargin=0em
@@ -48,7 +48,7 @@
 \newcommand{\Website}[1]{\texttt{\href{#1}{\textul{#1}}}}
 \newcommand{\ContactInfo}[6]{
   \part*{#1}
-  \begin{tabular}{ m{12em} m{24em} }
+  \begin{tabular}{ @{} m{12em} m{24em} @{} }
     #2 & \texttt{#4 #5} \\ #3 & #6
   \end{tabular}
   %1: \Name
@@ -126,6 +126,7 @@
 \newcommand{\ProjectToolListFIVE}[5]{#1, #2, #3, #4, #5}
 \newcommand{\ProjectToolListSIX}[6]{#1, #2, #3, #4, #5, #6}
 \newcommand{\ProjectToolListSEVEN}[7]{#1, #2, #3, #4, #5, #6, #7}
+\newcommand{\ProjectToolListEIGHT}[8]{#1, #2, #3, #4, #5, #6, #7, #8}
 
 %--- REFERENCES
 \newcommand{\ReferenceName}[1]{\textsc{#1}}
@@ -150,10 +151,10 @@
 
 \ContactInfo
   {\Name{Michael Henning}}
-  {\AddressLineOne{2524 Douglas Ave \#403}}
+  {\AddressLineOne{3100 Ferry Ave, Apt. D117}}
   {\AddressLineTwo{Bellingham, WA 98225}}
-  {\Email{henninm3@wwu.edu}}
-  {\Phone{(206)999-4513}}
+  {\Email{mykl951@gmail.com}}
+  {\Phone{206-999-4513}}
   {\Website{https://linkedin.com/in/myklhenn}}
 
 \Education
@@ -172,16 +173,8 @@
     {\CourseCode{CSCI 241}}
   }
   {\CourseItem
-    {\CourseName{Analysis of Algorithms}}
-    {\CourseCode{CSCI 305}}
-  }
-  {\CourseItem
     {\CourseName{Website Development and Management}}
     {\CourseCode{MIS 314}}
-  }
-  {\CourseItem
-    {\CourseName{Concurrent Programming}}
-    {\CourseCode{CSCI 322}}
   }
   {\CourseItem
     {\CourseName{Database Systems}}
@@ -195,8 +188,63 @@
     {\CourseName{Human-Centered System Design}}
     {\CourseCode{CSCI 497}}
   }
+  {\CourseItem
+    {\CourseName{Object Oriented Design}}
+    {\CourseCode{CSCI 345}}
+  }
+  {\CourseItem
+    {\CourseName{Internship in Internet Studies}}
+    {\CourseCode{CSCI 403}}
+  }
 
 \Projects
+  {\ProjectItem
+    {\ProjectTitle{Web Application for ``MyQuitPal''}}
+    {\ProjectLocation{Research Project, Western Washington University}}
+    {\ProjectDate{July 2017 to Present}}
+    {} % \ProjectPosition
+    {\ProjectDescription
+      {Improving/continuing a tool for running visualizations of smoking 
+      cessation data, as a companion to mobile app ``MyQuitPal'' (part of Dr. 
+      Moushumi Sharmin et al.'s research project at Western Washington 
+      University)}
+    }
+    {} % \ProjectLinkListXXX
+    {\ProjectToolListEIGHT
+      {\ProjectTool{HTML}}
+      {\ProjectTool{CSS}}
+      {\ProjectTool{JavaScript}}
+      {\ProjectTool{D3.js}}
+      {\ProjectTool{Bootstrap}}
+      {\ProjectTool{Node.js}}
+      {\ProjectTool{NPM}}
+      {\ProjectTool{GitHub}}
+    }
+  }
+  {\ProjectItem
+    {\ProjectTitle{Website for ``Surfer Yeti''}}
+    {\ProjectLocation{CSCI 403 Project, Western Washington University}}
+    {\ProjectDate{March 2017 to June 2017}}
+    {} % \ProjectPosition
+    {\ProjectDescription
+      {Created a website for local Bellingham band ``Surfer Yeti'' with a unique 
+      horizontal scrolling design and interactive animations}
+    }
+    {\ProjectLinkListTWO
+      {\ProjectLink{https://myklhenn.github.io/surferyeti}}
+      {\ProjectLink{https://github.com/myklhenn/surferyeti}}
+    }
+    {\ProjectToolListEIGHT
+      {\ProjectTool{HTML}}
+      {\ProjectTool{CSS}}
+      {\ProjectTool{jQuery}}
+      {\ProjectTool{Node.js}}
+      {\ProjectTool{NPM}}
+      {\ProjectTool{Bower}}
+      {\ProjectTool{Adobe Photoshop}}
+      {\ProjectTool{GitHub}}
+    }
+  }
   {\ProjectItem
     {\ProjectTitle{Mobile Application ``Journey''}}
     {\ProjectLocation{CSCI 497 Project, Western Washington University}}
@@ -232,8 +280,9 @@
     {\ProjectLinkListONE
       {\ProjectLink{http://github.com/myklhenn/ResuTeX}}
     }
-    {\ProjectToolListONE
+    {\ProjectToolListTWO
       {\ProjectTool{LaTeX}}
+      {\ProjectTool{GitHub}}
     }
   }
   {\ProjectItem
@@ -249,10 +298,13 @@
     {\ProjectLinkListONE
       {\ProjectLink{https://github.com/garyh6/dubhacks}}
     }
-    {\ProjectToolListFOUR
+    {\ProjectToolListSEVEN
       {\ProjectTool{HTML}}
       {\ProjectTool{CSS}}
       {\MEANStackToolList}
+      {\ProjectTool{jQuery}}
+      {\ProjectTool{Bootstrap}}
+      {\ProjectTool{D3.js}}
       {\ProjectTool{GitHub}}
     }
   }
@@ -266,10 +318,12 @@
       and Bootstrap frameworks}
     }
     {} % \ProjectLinkListXXX
-    {\ProjectToolListFOUR
+    {\ProjectToolListSIX
       {\ProjectTool{HTML}}
       {\ProjectTool{CSS}}
+      {\ProjectTool{jQuery}}
       {\MEANStackToolList}
+      {\ProjectTool{Bootstrap}}
       {\ProjectTool{GitHub}}
     }
   }
@@ -296,59 +350,19 @@
       {\ProjectTool{Heroku}}
     }
   }
-  {\ProjectItem
-    {\ProjectTitle{Website ``Research On Knowing''}}
-    {\ProjectLocation{at \EventTitle{Open Source Day}, Western Washington 
-      University}}
-    {\ProjectDate{May 2015}}
-    {\ProjectPosition{Front-End Developer}}
-    {\ProjectDescription
-      {Worked with ``Language of Languages'' project to redesign their website 
-      using Jekyll/GitHub Pages}
-    }
-    {\ProjectLinkListTWO
-      {\ProjectLink{http://www.researchonknowing.com}}
-      {\ProjectLink{https://github.com/andronetta/andronetta.github.io}}
-    }
-    {\ProjectToolListFOUR
-      {\ProjectTool{Jekyll}}
-      {\ProjectTool{GitHub}}
-      {\ProjectTool{HTML}}
-      {\ProjectTool{CSS}}
-    }
-  }
-  {\ProjectItem
-    {\ProjectTitle{Website ``Enheighten''}}
-    {\ProjectLocation{at \EventTitle{Startup Weekend ``Redesign Seattle,''} 
-      WeWork, Seattle, WA}}
-    {\ProjectDate{March 2014}}
-    {\ProjectPosition{Front-End Developer}}
-    {\ProjectDescription
-      {Built a website promoting products for tall people using WebStorm's IDE 
-      and the tools listed below}
-    }
-    {} % \ProjectLinkListXXX
-    {\ProjectToolListFIVE
-      {\ProjectTool{AngularJS}}
-      {\ProjectTool{Bootstrap}}
-      {\ProjectTool{Grunt}}
-      {\ProjectTool{Bower}}
-      {\ProjectTool{GitHub}}
-    }
-  }
 
 \References
+  {\ReferenceItem
+    {\ReferenceName{Tyler Avila}}
+    {\ReferenceEmail{tylera@spie.org}}
+  }
   {\ReferenceItem
     {\ReferenceName{Skyler Kidd}}
     {\ReferenceEmail{f.s.kidd@gmail.com}}
   }
   {\ReferenceItem
-    {\ReferenceName{Sue Piatt}}
-    {\ReferenceEmail{s.piatt@comcast.net}}
-  }
-  {\ReferenceItem
-    {\ReferenceName{Lesley Moffat}}
-    {\ReferenceEmail{lmoffat@everettsd.org}}
+    {\ReferenceName{Dr. Moushumi Sharmin}}
+    {\ReferenceEmail{Moushumi.Sharmin@wwu.edu}}
   }
 
 \end{document}
