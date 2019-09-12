@@ -1,5 +1,5 @@
 # ResuTeX
-A LaTeX resume/CV template, currently used for my own resume.
+A LaTeX resume/CV template.
 
 ***See the compiled document [here](https://github.com/myklhenn/ResuTeX/blob/master/mhenning-resume.pdf).***
 
